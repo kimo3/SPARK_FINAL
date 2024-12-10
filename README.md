@@ -1,6 +1,6 @@
 # spark
 
-Spark- README
+
 Welcome to the Spark STEM app, designed to ignite curiosity and encourage hands-on learning in Science, Technology, Engineering, and Mathematics (STEM)! This app provides an engaging and interactive experience for children to explore and learn through challenges and experiments.
 
 Features:
