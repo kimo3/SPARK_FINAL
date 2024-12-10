@@ -18,7 +18,7 @@ Widget build(BuildContext context){
           Text(termsAndConditionsTitle,
           style:TextStyle(
             fontFamily:'sparkFont',
-            fontSize:50,
+            fontSize:35,
           ),
           ),
            SizedBox(height: 20,),
@@ -98,13 +98,7 @@ Widget build(BuildContext context){
             fontFamily:'sparkFont',
             fontSize:25,
           ),
-          ),SizedBox(height: 20,),
-              Text(contactUs,
-          style:TextStyle(
-            fontFamily:'sparkFont',
-            fontSize:25,
-          ),
-          ),
+          )
 
         ],
       )

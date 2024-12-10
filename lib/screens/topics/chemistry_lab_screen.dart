@@ -10,11 +10,11 @@ class ChemistryLabWidget extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background color
+          
           Container(
             color: Colors.lightBlue[50],
           ),
-          // Blackboard
+          
           Positioned(
             top: 50,
             left: 20,
@@ -30,23 +30,23 @@ class ChemistryLabWidget extends StatelessWidget {
                
               },
               child: Image.asset(
-                'assets/black_board.png', // Replace with your blackboard image path
+                'assets/black_board.png', 
                 width: 150,
               ),
             ),
           ),
-          // Help Button
+          
           Positioned(
             top: 20,
             right: 20,
             child: GestureDetector(
               onTap: () {
-                // Help button click action
+                
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
                     title: const Text("Need Help?"),
-                    content: const Text("This is the help button."),
+                    content: const Text("Step 1: Balance the Equation Click on the blackboard to balance the equation first.\nStep 2: Start the Experiment Once balanced, click on the lab table to begin the experiment!"),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(context),
@@ -63,18 +63,18 @@ class ChemistryLabWidget extends StatelessWidget {
               ),
             ),
           ),
-          // Scientist
+        
           Positioned(
             bottom: 0,
             left: 20,
             
               child: Image.asset(
-                'assets/dr_proton_full.png', // Replace with your scientist image path
+                'assets/dr_proton_full.png', 
                 width: 100,
               ),
             ),
           
-          // Table
+         
           Positioned(
             bottom: 0,
             left: 120,
@@ -89,7 +89,7 @@ class ChemistryLabWidget extends StatelessWidget {
                       );
               },
               child: Image.asset(
-                'assets/lab_table.png', // Replace with your table image path
+                'assets/lab_table.png', 
                 height: 120,
                 fit: BoxFit.contain,
               ),

@@ -13,8 +13,8 @@ class BackgroundMusicService {
   }
 
   Future<void> initialize() async {
-    await _backgroundMusicPlayer.setAsset('assets/background_music.mp3');  // Replace with your song path
-    _backgroundMusicPlayer.setLoopMode(LoopMode.one);  // Loop the music indefinitely
+    await _backgroundMusicPlayer.setAsset('assets/background_music.mp3');  
+    _backgroundMusicPlayer.setLoopMode(LoopMode.one); 
   }
 
   void play() {

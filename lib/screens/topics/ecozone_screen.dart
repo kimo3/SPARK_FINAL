@@ -15,7 +15,7 @@ class EcoZoneState extends State<EcoZone> {
   @override
   void initState() {
     super.initState();
-    // Force landscape mode when this screen is displayed
+    
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
   }
 
@@ -24,8 +24,8 @@ class EcoZoneState extends State<EcoZone> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make the app bar background transparent
-        elevation: 0, // Remove the shadow of the app bar
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -44,13 +44,13 @@ class EcoZoneState extends State<EcoZone> {
         ),
         child: Stack(
           children: [
-            // Centered CustomCards
+            
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Lesson Card - Opens a video
+                
                   CustomCard(
                     onPressed: () {
                       Navigator.push(
@@ -68,7 +68,6 @@ class EcoZoneState extends State<EcoZone> {
                     backgroundColor: const Color(0xff72ddf7),
                   ),
 
-                  // Success Story Card - Opens a PDF
                   CustomCard(
                     onPressed: () {
                       Navigator.push(

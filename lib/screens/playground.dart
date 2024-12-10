@@ -25,10 +25,10 @@ class PlaygroundScreenState extends State<PlaygroundScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Allows the app bar to overlay content
+      extendBodyBehindAppBar: true, 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        elevation: 0, // Removes the shadow
+        elevation: 0, 
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -51,7 +51,7 @@ class PlaygroundScreenState extends State<PlaygroundScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(width: 10), // Add spacing at the start
+                const SizedBox(width: 10), 
                 PlanetButton(
                   onPressed: () {
                     Navigator.push(

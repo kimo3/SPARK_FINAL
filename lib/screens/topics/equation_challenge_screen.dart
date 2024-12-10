@@ -25,7 +25,7 @@ class ChemistryEquationScreenState extends State<ChemistryEquationScreen> {
   String _resultMessage = '';
 
   void _startExperiment() {
-    // Simple logic to validate the inputs (example for demonstration)
+    
     if (_coController.text == "2" && _chController.text == "3") {
       setState(() {
         _resultMessage = "Correct! Well done.";
@@ -43,7 +43,7 @@ class ChemistryEquationScreenState extends State<ChemistryEquationScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/black_board.jpg"), // Replace with your background path
+            image: AssetImage("assets/black_board.jpg"), 
             fit: BoxFit.cover,
           ),
         ),
@@ -57,7 +57,7 @@ class ChemistryEquationScreenState extends State<ChemistryEquationScreen> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
-                 fontFamily: 'chalk', // Replace with your custom font family
+                 fontFamily: 'chalk', 
                 ),
               ),
               const SizedBox(height: 20),
@@ -68,7 +68,7 @@ class ChemistryEquationScreenState extends State<ChemistryEquationScreen> {
                     "CH₃COOH + NaHCO₃ → ",
                     style: TextStyle(fontFamily: 'chalk',color: Colors.white, fontSize: 20),
                   ),
-                  // CO with subscript field
+                  
                   Row(
                     children: [
                       const Text(
@@ -98,7 +98,7 @@ class ChemistryEquationScreenState extends State<ChemistryEquationScreen> {
                     " + H₂O + ",
                     style: TextStyle(fontFamily: 'chalk',color: Colors.white, fontSize: 20),
                   ),
-                  // CH with subscript field in CH₃COONa
+                  
                   Row(
                     children: [
                       const Text(

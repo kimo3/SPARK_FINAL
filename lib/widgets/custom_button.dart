@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spark/widgets/background_music.dart';
 
-// GoogleButton
+
 class GoogleButton extends StatelessWidget {
   final VoidCallback onPressed;
 
@@ -18,7 +18,7 @@ class GoogleButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        padding: EdgeInsets.symmetric(vertical: 25, horizontal: width * 0.175 ), // Adjusted padding
+        padding: EdgeInsets.symmetric(vertical: 25, horizontal: width * 0.175 ), 
         elevation: 4,
       ),
       child: Row(
@@ -26,8 +26,8 @@ class GoogleButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/google_icon.png', // Ensure this path is correct
-            height: width * 0.05  , // Adjusted icon size
+            'assets/google_icon.png', 
+            height: width * 0.05  , 
           ),
           
         ],
@@ -36,7 +36,7 @@ class GoogleButton extends StatelessWidget {
   }
 }
 
-// SettingsButton
+
 class SettingsButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double vertical;
@@ -72,7 +72,7 @@ class SettingsButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            '$imgPath', // Ensure this path is correct
+            '$imgPath', 
             height: imgHeight,
           ),
           const SizedBox(width: 12),
@@ -82,13 +82,13 @@ class SettingsButton extends StatelessWidget {
   }
 }
 
-// MuteButton
+
 class MuteButton extends StatefulWidget {
-  final String playIconPath;   // Icon for playing (unmuted) state
-  final String pauseIconPath;  // Icon for paused (muted) state
-  final double vertical;       // Vertical padding
-  final double horizontal;     // Horizontal padding
-  final double imgHeight;      // Height of the icon
+  final String playIconPath;   
+  final String pauseIconPath;  
+  final double vertical;       
+  final double horizontal;     
+  final double imgHeight;      
 
   const MuteButton({
     Key? key,
@@ -108,12 +108,12 @@ class MuteButtonState extends State<MuteButton> {
 
   void toggleMusic() {
     if (isPlaying) {
-      BackgroundMusicService().pause(); // Pause the music
+      BackgroundMusicService().pause(); 
     } else {
-      BackgroundMusicService().play(); // Play the music
+      BackgroundMusicService().play(); 
     }
     setState(() {
-      isPlaying = !isPlaying; // Toggle the state
+      isPlaying = !isPlaying; 
     });
   }
 
@@ -137,17 +137,16 @@ class MuteButtonState extends State<MuteButton> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            isPlaying ? widget.playIconPath : widget.pauseIconPath, // Switch icon based on state
+            isPlaying ? widget.playIconPath : widget.pauseIconPath, 
             height: widget.imgHeight,
           ),
-          const SizedBox(width: 12),  // Corrected to SizedBox
+          const SizedBox(width: 12),  
         ],
       ),
     );
   }
 }
 
-// IntroButton (Main Button for Signup/Login)
 class IntroButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -158,7 +157,7 @@ class IntroButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.color = const Color(0xFFFF4081), // Default pink color
+    this.color = const Color(0xFFFF4081), 
     this.textColor = Colors.white,
   });
 
@@ -167,8 +166,8 @@ class IntroButton extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      width: width * 0.8,  // Set width to 80% of screen width
-      height: 50,  // Adjusted height for mobile
+      width: width * 0.8,  
+      height: 50,  
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
@@ -183,7 +182,7 @@ class IntroButton extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'sparkFont',
             color: textColor,
-            fontSize: width * 0.02,  // Adjust font size based on screen width
+            fontSize: width * 0.02,  
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -192,7 +191,7 @@ class IntroButton extends StatelessWidget {
   }
 }
 
-// BackButton
+
 class BackButton extends StatelessWidget {
   const BackButton({super.key});
 
@@ -205,7 +204,7 @@ class BackButton extends StatelessWidget {
       onPressed: () {
         Navigator.pop(context);
       },
-      iconSize: width * 0.08, // Adjust icon size based on screen width
+      iconSize: width * 0.08, 
     );
   }
 }
@@ -234,13 +233,12 @@ class DateButtonState extends State<DateButton> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    // Use a percentage of screen width for width and height, rather than static values
-    double buttonWidth = widget.hwidth ?? width * 0.4; // Adjust width to fit the text better
-    double buttonHeight = widget.vheight ?? width * 0.12; // Adjust height proportionally
+    double buttonWidth = widget.hwidth ?? width * 0.4; 
+    double buttonHeight = widget.vheight ?? width * 0.12; 
 
     return Container(
-      width: buttonWidth, // Set container width for flexible width
-      height: buttonHeight, // Set container height for flexible height
+      width: buttonWidth, 
+      height: buttonHeight, 
       child: TextButton(
         onPressed: _toggleBorderColor,
         style: TextButton.styleFrom(
@@ -252,8 +250,8 @@ class DateButtonState extends State<DateButton> {
           widget.date,
           style: TextStyle(
             color: Colors.black,
-            fontSize: width * 0.05, // Scaled font size for better fit
-            fontWeight: FontWeight.bold, // Make the font weight bold for clarity
+            fontSize: width * 0.05, 
+            fontWeight: FontWeight.bold, 
           ),
         ),
       ),
@@ -263,7 +261,7 @@ class DateButtonState extends State<DateButton> {
 
 
 
-// NextButton (Skip Button)
+
 class NextButton extends StatelessWidget {
   const NextButton({super.key});
 
@@ -280,7 +278,7 @@ class NextButton extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'sparkFont',
           color: Colors.white,
-          fontSize: width * 0.08, // Adjust font size
+          fontSize: width * 0.08, 
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -290,8 +288,8 @@ class NextButton extends StatelessWidget {
 
 class PlanetButton extends StatelessWidget {
   final VoidCallback onPressed;
-  final String imagePath; // Image path parameter
-  final String buttonText; // Text to display below the image
+  final String imagePath; 
+  final String buttonText; 
 
   const PlanetButton({
     super.key,
@@ -307,28 +305,28 @@ class PlanetButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.transparent, // Transparent background
+        backgroundColor: Colors.transparent, 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: width * 0.175), // Adjusted padding
-        elevation: 0, // Set elevation to 0 to remove shadow
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: width * 0.175), 
+        elevation: 0, 
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            imagePath, // Image path (ensure the path is correct)
-            height: width * 0.09, // Adjust image size
+            imagePath, 
+            height: width * 0.09, 
           ),
-          const SizedBox(height: 8), // Space between image and text
+          const SizedBox(height: 8), 
           Text(
-            buttonText, // Button text
+            buttonText, 
             style: TextStyle(
               fontFamily: 'sparkFont',
-              color: const Color.fromARGB(255, 255, 255, 255), // Text color
-              fontSize: width * 0.02, // Font size adjusted based on screen width
+              color: const Color.fromARGB(255, 255, 255, 255),
+              fontSize: width * 0.02, 
               fontWeight: FontWeight.w400,
             ),
           ),

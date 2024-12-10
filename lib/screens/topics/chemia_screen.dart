@@ -17,17 +17,17 @@ class ChemiaState extends State<Chemia> {
   void initState() {
     super.initState();
 
-    // Force landscape mode when this screen is displayed
+    
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Extend body behind app bar
+      extendBodyBehindAppBar: true, 
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make app bar background transparent
-        elevation: 0, // Remove shadow
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -46,7 +46,7 @@ class ChemiaState extends State<Chemia> {
         ),
         child: Stack(
           children: [
-            // Centered CustomCards
+            
             Center(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -55,7 +55,7 @@ class ChemiaState extends State<Chemia> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(width: 20),
-                    // Lesson Card - Opens a video
+                    
                     CustomCard(
                       onPressed: () {
                         Navigator.push(

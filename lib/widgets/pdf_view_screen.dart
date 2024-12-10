@@ -6,8 +6,7 @@ import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
 
 class PdfViewerScreen extends StatefulWidget {
-  final String pdfUrl; // URL of the PDF
-
+  final String pdfUrl; 
   const PdfViewerScreen({Key? key, required this.pdfUrl}) : super(key: key);
 
   @override
@@ -19,8 +18,8 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
   Timer? _timer;
   int _totalPages = 0;
   int _currentPage = 0;
-  String? _localFilePath; // Path to the downloaded PDF
-  bool _isLoading = true; // Track loading state
+  String? _localFilePath; 
+  bool _isLoading = true; 
 
   @override
   void initState() {
@@ -30,24 +29,23 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
 
   Future<void> _downloadAndOpenPdf() async {
     try {
-      // Get the temporary directory
+      
       final Directory tempDir = await getTemporaryDirectory();
       final String filePath = '${tempDir.path}/downloaded.pdf';
 
-      // Download the PDF file
       final Dio dio = Dio();
       await dio.download(widget.pdfUrl, filePath);
 
-      // Set the local file path
+      
       setState(() {
         _localFilePath = filePath;
-        _isLoading = false; // Stop showing the loading indicator
+        _isLoading = false; 
       });
 
-      // Start the auto-scroll
+      
       _startAutoScroll();
     } catch (e) {
-      // Handle download errors
+      
       setState(() {
         _isLoading = false;
       });
@@ -62,7 +60,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
       int nextPage = _currentPage + 1;
 
       if (nextPage >= _totalPages) {
-        _timer?.cancel(); // Stop at the last page
+        _timer?.cancel(); 
       } else {
         _pageController.animateToPage(
           nextPage,
@@ -86,7 +84,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator()) // Show loading indicator
+          ? const Center(child: CircularProgressIndicator()) 
           : PDFView(
               filePath: _localFilePath,
               fitEachPage: true,

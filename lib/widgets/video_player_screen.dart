@@ -12,8 +12,8 @@ class VideoPlayerScreen extends StatefulWidget {
 
 class VideoPlayerScreenState extends State<VideoPlayerScreen> {
   late VideoPlayerController _controller;
-  double _currentPosition = 0.0; // Current position of the video (used for slider)
-  double _videoDuration = 0.0; // Total duration of the video (used for slider)
+  double _currentPosition = 0.0; 
+  double _videoDuration = 0.0; 
 
   @override
   void initState() {
@@ -23,13 +23,12 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
         setState(() {
           _videoDuration = _controller.value.duration.inSeconds.toDouble();
         });
-        _controller.play(); // Auto-play the video
+        _controller.play(); 
       });
 
-    // Listen to video player state to detect when the video ends
     _controller.addListener(() {
       if (_controller.value.position == _controller.value.duration) {
-        Navigator.pop(context); // Go back when the video ends
+        Navigator.pop(context); 
       }
       setState(() {
         _currentPosition = _controller.value.position.inSeconds.toDouble();
@@ -43,14 +42,14 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
     super.dispose();
   }
 
-  // Function to skip 10 seconds forward in the video
+ 
   void skipForward() {
     final currentPosition = _controller.value.position;
     final newPosition = currentPosition + const Duration(seconds: 10);
     _controller.seekTo(newPosition);
   }
 
-  // Function to handle dragging the slider to seek the video
+  
   void seekVideo(double value) {
     final position = Duration(seconds: value.toInt());
     _controller.seekTo(position);
@@ -59,7 +58,7 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Ensures a black background for the video
+      backgroundColor: Colors.black, 
       body: Center(
         child: _controller.value.isInitialized
             ? Stack(
@@ -72,13 +71,13 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
                             : _controller.play();
                       });
                     },
-                    onDoubleTap: skipForward, // Skip forward 10 seconds on double tap
+                    onDoubleTap: skipForward, 
                     child: AspectRatio(
                       aspectRatio: _controller.value.aspectRatio,
                       child: VideoPlayer(_controller),
                     ),
                   ),
-                  // Show slider when video is paused
+                  
                   if (!_controller.value.isPlaying)
                     Positioned(
                       bottom: 40,
@@ -95,7 +94,7 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     ),
                 ],
               )
-            : const CircularProgressIndicator(), // Loading spinner
+            : const CircularProgressIndicator(), 
       ),
     );
   }

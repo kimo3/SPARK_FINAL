@@ -39,7 +39,7 @@ class PlanetsWidgetState extends State<PlanetsWidget> {
       int nextPage = _pageController.page!.round() + 1;
       
       if (nextPage == _imagePaths.length) {
-        // If reached the last image, cancel the timer and navigate to Home
+        
         _timer?.cancel();
         Navigator.pushReplacement(
           context,

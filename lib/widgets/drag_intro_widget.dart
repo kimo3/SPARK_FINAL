@@ -11,7 +11,6 @@ class DragIntroWidget extends StatefulWidget {
 class DragSplashScreenState extends State<DragIntroWidget> {
   int currentZone = 0;
 
-  // Define colors for each zone
   final List<Color> zoneColors = [clip1, clip2, clip3];
 
   @override
@@ -22,18 +21,18 @@ class DragSplashScreenState extends State<DragIntroWidget> {
     return Scaffold(
       body: Stack(
         children: [
-          // Purple curved zone with drag gesture detection
+          
           GestureDetector(
             onHorizontalDragEnd: (details) {
               setState(() {
-                // Change the content in the purple zone when dragging left or right
+              
                 if (details.velocity.pixelsPerSecond.dx > 0) {
-                  // Swiping Right
+                  
                   if (currentZone > 0) {
                     currentZone--;
                   }
                 } else {
-                  // Swiping Left
+                 
                   if (currentZone < 2) {
                     currentZone++;
                   }
@@ -44,7 +43,7 @@ class DragSplashScreenState extends State<DragIntroWidget> {
               clipper: CurvedClipper(),
               child: Container(
                 color: zoneColors[currentZone],
-                height: height * 0.6, // Adjust height for mobile
+                height: height * 0.6, 
                 child: buildPurpleZoneContent(width, height),
               ),
             ),
@@ -70,23 +69,23 @@ class DragSplashScreenState extends State<DragIntroWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(imagePaths[currentZone], height: height * 0.25),  // Adjust image size based on screen height
+        Image.asset(imagePaths[currentZone], height: height * 0.25), 
         const SizedBox(height: 8),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.1), // Adjust padding based on screen width
+          padding: EdgeInsets.symmetric(horizontal: width * 0.1), 
           child: Text(
             descriptions[currentZone],
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'sparkFont',
-              fontSize: width * 0.05,  // Adjust font size based on screen width
+              fontSize: width * 0.05, 
               color: Colors.black,
               fontWeight: FontWeight.w400,
             ),
           ),
         ),
         const SizedBox(height: 20),
-        // Page Indicator for the purple zone
+        
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

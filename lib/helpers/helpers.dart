@@ -53,7 +53,7 @@ class _Painter extends CustomPainter {
     required this.text,
     required this.textStyle,
     this.initialAngle = 0,
-    this.rotationAngle = 0, // Initialize rotation angle
+    this.rotationAngle = 0, 
   });
 
   final _textPainter = TextPainter(textDirection: TextDirection.ltr);
@@ -107,15 +107,15 @@ class LeftCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
-    path.lineTo(size.width * 0.75, 0); // Starting point on top edge
+    path.lineTo(size.width * 0.75, 0); 
     path.quadraticBezierTo(
       size.width,
       size.height / 2,
       size.width * 0.75,
-      size.height, // Control point and end point for the curve
+      size.height,
     );
-    path.lineTo(0, size.height); // Bottom left corner
-    path.close(); // Completes the path
+    path.lineTo(0, size.height); 
+    path.close(); 
     return path;
   }
 
@@ -127,7 +127,6 @@ class LeftCurveClipper extends CustomClipper<Path> {
 
 
 
-// Custom clipper for the curved shape
 class CurvedClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -193,8 +192,8 @@ class VideoAndPDFWidget extends StatefulWidget {
 
   const VideoAndPDFWidget({
     super.key,
-    required this.videoPath, // Path to the video file
-    required this.pdfPath,   // Path to the PDF file
+    required this.videoPath, 
+    required this.pdfPath,   
   });
 
   @override
@@ -213,20 +212,19 @@ class VideoAndPDFWidgetState extends State<VideoAndPDFWidget> {
     _initializeVideo();
   }
 
-  // Initialize the video player
   void _initializeVideo() {
     _videoController = VideoPlayerController.asset(widget.videoPath)
       ..initialize().then((_) {
         setState(() {});
-        _videoController.play(); // Automatically start playing the video
+        _videoController.play(); 
       }).catchError((e) {
         debugPrint('Error initializing video player: $e');
       });
 
-    // Ensure the video doesn't loop
+    
     _videoController.setLooping(false);
 
-    // Listener for when the video finishes
+    
     _videoController.addListener(() {
       if (_videoController.value.isInitialized &&
           _videoController.value.position == _videoController.value.duration &&
@@ -234,22 +232,21 @@ class VideoAndPDFWidgetState extends State<VideoAndPDFWidget> {
         setState(() {
           _videoFinished = true;
         });
-        _startAutoScroll(); // Start the auto-scroll as soon as the video finishes
+        _startAutoScroll(); 
       }
     });
   }
 
-  // Auto-scroll for PDF pages
+  
   void _startAutoScroll() {
     _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
       try {
         if (_pageController.hasClients && _pageController.page != null) {
           int nextPage = _pageController.page!.round() + 1;
 
-          // Replace "5" with the total number of pages if known
           if (nextPage == 5) {
             _timer?.cancel();
-            Navigator.pop(context); // Navigate or do something after PDF finishes
+            Navigator.pop(context); 
           } else {
             _pageController.animateToPage(
               nextPage,
@@ -278,7 +275,7 @@ class VideoAndPDFWidgetState extends State<VideoAndPDFWidget> {
     return Scaffold(
       body: _videoFinished
           ? PDFView(
-              filePath: widget.pdfPath, // Display the PDF viewer when video ends
+              filePath: widget.pdfPath, 
               onRender: (pages) {
                 debugPrint('Total pages: $pages');
               },
@@ -288,7 +285,7 @@ class VideoAndPDFWidgetState extends State<VideoAndPDFWidget> {
               onPageError: (page, error) {
                 debugPrint('Error on page $page: $error');
               },
-              pageSnap: true, // Optional: Enables snapping to pages
+              pageSnap: true, 
               swipeHorizontal: false,
               fitPolicy: FitPolicy.BOTH,
             )

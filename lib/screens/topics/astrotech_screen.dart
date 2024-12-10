@@ -15,7 +15,7 @@ class AstrotechState extends State<Astrotech> {
   @override
   void initState() {
     super.initState();
-    // Force landscape mode when this screen is displayed
+    
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft
@@ -25,10 +25,10 @@ class AstrotechState extends State<Astrotech> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Extend the body behind the app bar
+      extendBodyBehindAppBar: true, 
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make the app bar transparent
-        elevation: 0, // Remove shadow
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -50,7 +50,7 @@ class AstrotechState extends State<Astrotech> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Lesson Card - Opens a video
+              
               CustomCard(
                 onPressed: () {
                   Navigator.push(
@@ -68,7 +68,7 @@ class AstrotechState extends State<Astrotech> {
                 backgroundColor: const Color(0xff72ddf7),
               ),
 
-              // Lesson 2 Card - Opens a PDF
+             
               CustomCard(
                 onPressed: () {
                   Navigator.push(
@@ -87,7 +87,6 @@ class AstrotechState extends State<Astrotech> {
                 backgroundColor: const Color(0xffa8e6cf),
               ),
 
-              // Success Story Card - Opens a PDF
               CustomCard(
                 onPressed: () {
                   Navigator.push(

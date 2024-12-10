@@ -15,7 +15,7 @@ class ArchiTechState extends State<ArchiTech> {
   @override
   void initState() {
     super.initState();
-    // Force landscape mode when this screen is displayed
+    
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft
@@ -25,10 +25,10 @@ class ArchiTechState extends State<ArchiTech> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Extend the body behind the app bar
+      extendBodyBehindAppBar: true, 
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make the app bar transparent
-        elevation: 0, // Remove shadow
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -50,7 +50,7 @@ class ArchiTechState extends State<ArchiTech> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Lesson Card - Opens a video
+              
               CustomCard(
                 onPressed: () {
                   Navigator.push(
@@ -68,7 +68,7 @@ class ArchiTechState extends State<ArchiTech> {
                 backgroundColor: const Color(0xff72ddf7),
               ),
 
-              // Success Story Card - Opens a PDF
+             
               CustomCard(
                 onPressed: () {
                   Navigator.push(

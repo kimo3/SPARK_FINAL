@@ -10,7 +10,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    // Light cyan background
+    
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(16),
@@ -21,7 +21,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
           ),
           child: Row(
             children: [
-              // Left Side: Dr. Proton Card
+              
               Container(
                 width: 180,
                 padding: const EdgeInsets.all(8),
@@ -33,12 +33,12 @@ class ChemiaChallengeIntro extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Logo or Header
+                    
                     const Row(
                       children: [
-                        // Logo Placeholder
+                        
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/logo.png'), // Path to the logo image
+                          backgroundImage: AssetImage('assets/logo.png'), 
                           radius: 16,
                         ),
                          SizedBox(width: 8),
@@ -52,16 +52,16 @@ class ChemiaChallengeIntro extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 8),
-                    // Profile Image
+                    
                     const Center(
                       child: CircleAvatar(
                         backgroundImage:
-                            AssetImage('assets/dr_proton.png'), // Path to Dr. Proton's image
+                            AssetImage('assets/dr_proton.png'), 
                         radius: 40,
                       ),
                     ),
                     const SizedBox(height: 8),
-                    // Details
+                   
                     const Text(
                       'Name: Dr. Proton',
                       style: TextStyle(fontFamily: 'sparkFont',fontSize: 12 ),
@@ -75,7 +75,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
                        style: TextStyle(fontFamily: 'sparkFont',fontSize: 12 ),
                     ),
                     const Spacer(),
-                    // Barcode Image Placeholder
+                    
                     Container(
                       height: 40,
                       decoration: BoxDecoration(
@@ -84,7 +84,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
                       ),
                       child: Center(
                         child: Image.asset(
-                          'assets/barcode.png', // Path to your barcode image
+                          'assets/barcode.png', 
                           fit: BoxFit.contain,
                           height: 40,
                         ),
@@ -94,7 +94,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
-              // Right Side: Description
+              
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +106,7 @@ class ChemiaChallengeIntro extends StatelessWidget {
                       style: TextStyle(letterSpacing: 3 ,fontSize: 14 ,fontFamily: 'sparkFont'),
                     ),
                     const Spacer(),
-                    // Start Exploring Button
+                    
                     IntroButton(
                       text: 'Start Exploring',
                       onPressed: () {

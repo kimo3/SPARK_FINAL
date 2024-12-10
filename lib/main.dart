@@ -7,13 +7,13 @@ import 'package:spark/widgets/background_music.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Force landscape mode globally
+  
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeRight,
     DeviceOrientation.landscapeLeft,
   ]);
 
-  // Initialize and start playing background music
+  
   final backgroundMusicService = BackgroundMusicService();
   await backgroundMusicService.initialize();
   backgroundMusicService.play();
